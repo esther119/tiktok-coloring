@@ -5,6 +5,7 @@ import {
 } from "next";
 import Head from "next/head";
 import { useMemo, useState } from "react";
+import defaultCode from "../sections/DefaultCode";
 import { Github, Twitter } from "lucide-react";
 
 import { ChatGPTEditor } from "../sections/ChatGPTEditor";
@@ -96,7 +97,7 @@ function useParams() {
 const Home: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = (
   props
 ) => {
-  const [inputText, setInputText] = useState<string>("");
+  const [inputText, setInputText] = useState<string>(defaultCode);
 
   const [params, setParams] = useParams();
 
@@ -132,9 +133,9 @@ const Home: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = (
 
         <div className="grid gap-4 md:grid-cols-2">
           <section className="flex flex-col gap-4">
-            {isChatModel(params) && (
+            {/* {isChatModel(params) && (
               <ChatGPTEditor model={params.model} onChange={setInputText} />
-            )}
+            )} */}
 
             <TextArea
               value={inputText}
@@ -169,7 +170,7 @@ const Home: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = (
         </style>
         <div className="flex justify-between text-center md:mt-6">
           <p className=" text-sm text-slate-400">
-            Built by{" "}
+            Thanks to the building of{" "}
             <a
               target="_blank"
               rel="noreferrer"
@@ -178,7 +179,7 @@ const Home: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = (
             >
               dqbd
             </a>
-            . Created with the generous help from{" "}
+            . Created with the help from{" "}
             <a
               target="_blank"
               rel="noreferrer"
@@ -204,7 +205,7 @@ const Home: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = (
             </a>
           </p>
 
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             <a
               target="_blank"
               rel="noreferrer"
@@ -221,7 +222,7 @@ const Home: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = (
             >
               <Twitter />
             </a>
-          </div>
+          </div> */}
         </div>
       </main>
     </>

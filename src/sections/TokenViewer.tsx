@@ -67,7 +67,7 @@ export function TokenViewer(props: {
 
   return (
     <>
-      <div className="flex gap-4">
+      {/* <div className="flex gap-4">
         <div className="flex-grow rounded-md border bg-slate-50 p-4 shadow-sm">
           <p className="text-sm ">Token count</p>
           <p className="text-lg">{tokenCount}</p>
@@ -81,7 +81,7 @@ export function TokenViewer(props: {
             </p>
           </div>
         )}
-      </div>
+      </div> */}
 
       <pre className="min-h-[256px] max-w-[100vw] overflow-auto whitespace-pre-wrap break-all rounded-md border bg-slate-50 p-4 shadow-sm">
         {props.data?.map(({ text }, idx) => (
